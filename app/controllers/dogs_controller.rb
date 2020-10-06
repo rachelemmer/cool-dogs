@@ -16,7 +16,7 @@ class DogsController < ApplicationController
             breed: params[:breed],
             age: params[:age]
         )
-        render status: 200
+        render json: @dog, status: :created
     end
 
     def update 
@@ -24,13 +24,13 @@ class DogsController < ApplicationController
         @dog.update(
             age: params[:age] 
         )
-        render json: @dog
+        render json: "Successfully updated"
     end
 
     def destroy 
         @dog = Dog.find(params[:id])
         @dog.destroy 
-        render status: 200
+        render json: "Successfully deleted"
     end 
 
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :dogs, only: [:index]
+  resources :dogs
 
   # get "/dogs", to: "dogs#index"
   # get "/dogs/:id", to: "dogs#show"
